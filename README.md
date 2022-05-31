@@ -20,16 +20,19 @@
 <br>
 
 ## SCSS
-> 변수 선언 가능
+> 변수 선언
 1) $ 붙이고 값 넣기 -> $hongsi : 1;
 2) 변수명 조건 : 숫자로 시작할 수 없음, 소문자 및 대시(-) 사용 권장
 3) 값 조건 : CSS의 property에 사용되는 모든 value -> $hongsi : color 20ms ease-in-out;과 같이 긴 내용도 가능
 <br>
 
 > @import
-1) main.scss가 base폴더 내 scss들을 인식하도록
+1) main.scss가 다른 .scss들을 인식하도록 불러옴
 2) 언더바(_), 확장자는 생략 가능
+3) 변수 관련 .scss는 항상 최상단에 선언
 ```scss
+@import './constants/colors';
+
 @import './base/fonts';
 @import './base/normalize';
 @import './base/reset';
@@ -58,3 +61,14 @@
 5) 우측 하단 Download 옆 설정 -> 폰트 및 공통 클래스 명 설정, CSS Selector에서 Use i 체크
 6) Download 후 프로젝트 폴더에 fonts 옮겨놓기
 7) 다운 받은 style.css 내용 복사, 프로젝트 폴더에 _font.scss 파일 만들어 붙여넣고 내부 폰트 경로 재설정
+<br>
+
+> font-smoothing 속성
+1) 폰트를 부드럽게 렌더링
+2) CSS 초기화 전체 요소 단에 작성
+```scss
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
