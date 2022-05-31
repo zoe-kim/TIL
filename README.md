@@ -16,6 +16,12 @@
 1) Normalize.css (https://necolas.github.io/normalize.css/) 에서 다운로드
 2) 프로젝트 폴더에 _normalize.scss 파일 만들어서 raw파일 붙여넣기
 3) 추가 커스텀 reset -> _reset.scss 만들어서 직접 작성
+<br>
+
+> Grid System
+- unit : 기둥 하나의 width 값
+- gutter : unit 사이의 간격
+- columns : unit + gutter (unit 양 옆을 1/2 gutter가 감싼 형태)
 
 <br>
 
