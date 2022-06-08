@@ -24,6 +24,13 @@
 - column : unit + gutter (unit 양 옆을 1/2 gutter가 감싼 형태)
 - container : 모든 column을 묶은 형태
 - margin : container 양쪽 끝에 붙는 여백
+<br>
+
+> Flex
+```css
+flex-wrap: wrap;
+```
+- 컨텐츠를 억지로 한 줄에 욱여넣지 않고 다음 줄로 넘기는 속성. (기본 설정은 nowrap)
 
 <br>
 
@@ -34,10 +41,14 @@
 3) 값 조건 : CSS의 property에 사용되는 모든 value -> $hongsi : color 20ms ease-in-out;과 같이 긴 내용도 가능
 <br>
 
+> 속성 선택자
+ ```css
+[class^='col-'] {...}
+```
+- [속성이름^="속성값"] : 특정 속성의 속성값이 특정 문자열로 시작하는 요소를 모두 선택
+<br>
+
 > @import
-1) main.scss가 다른 .scss들을 인식하도록 불러옴
-2) 언더바(_), 확장자는 생략 가능
-3) 변수 관련 .scss는 항상 최상단에 선언
 ```scss
 @import './constants/colors';
 
@@ -45,6 +56,37 @@
 @import './base/normalize';
 @import './base/reset';
 ```
+- main.scss가 다른 .scss들을 인식하도록 불러옴
+- 언더바(_), 확장자는 생략 가능
+- 변수 관련 .scss는 항상 최상단에 선언
+<br>
+
+> @for 반복문
+```scss
+  @for $i from 1 through $sm-columns {
+    .col-sm-#{$i} {
+      width: percentage($i / $sm-columns); // scss 내장함수를 통해 소숫점을 퍼센트로 변환
+    }
+  }
+```
+- @for (변수) from (시작 숫자) to (끝 숫자) {...}
+- to(끝 숫자 비포함) 대신 through(끝 숫자 포함)도 사용 가능
+- 문자열의 변수를 값으로 치환 -> 보간법(#{변수}) 처리
+<br>
+
+> @media 쿼리
+```scss
+  @media screen and (min-width: $md-breakpoint) {
+    max-width: $md-max-container;
+    padding: 0 $md-margin;
+  }
+
+  @media screen and (min-width: $lg-breakpoint) {
+    max-width: $lg-max-container;
+    padding: 0;
+  }
+```
+- @media (media-type) and (media-feature-rule) {...}
 
 <br>
 
