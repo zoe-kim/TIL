@@ -21,7 +21,9 @@
 > Grid System
 - unit : 기둥 하나의 width 값
 - gutter : unit 사이의 간격
-- columns : unit + gutter (unit 양 옆을 1/2 gutter가 감싼 형태)
+- column : unit + gutter (unit 양 옆을 1/2 gutter가 감싼 형태)
+- container : 모든 column을 묶은 형태
+- margin : container 양쪽 끝에 붙는 여백
 
 <br>
 
