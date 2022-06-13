@@ -106,8 +106,8 @@ flex-wrap: wrap;
 ```
 - 인자 값 사용
 ```scss
-  // 선언 - 인자 생략해도 오류 없도록 false 처리
-  @mixin text-style($color: false) {
+  // 선언
+  @mixin text-style($color: false) {  // 인자 생략해도 오류 없도록 기본값 false 처리
     font-size: $font-size-12;
     line-height: $line-height-12;
     letter-spacing: $letter-spacing-12;
