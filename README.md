@@ -87,6 +87,59 @@ flex-wrap: wrap;
   }
 ```
 - @media (media-type) and (media-feature-rule) {...}
+<br>
+
+> @mixin
+- 인자 값 미사용
+```scss
+  // 선언
+  @mixin text-style-12() {
+    font-size: $font-size-12;
+    line-height: $line-height-12;
+    letter-spacing: $letter-spacing-12;
+  }
+  
+  // 호출
+  p {
+    @include text-style-12;  // 괄호 생략 가능
+  }
+```
+- 인자 값 사용
+```scss
+  // 선언 - 인자 생략해도 오류 없도록 false 처리
+  @mixin text-style($color: false) {
+    font-size: $font-size-12;
+    line-height: $line-height-12;
+    letter-spacing: $letter-spacing-12;
+    
+    // 유효성 검사 - color 값이 맞는지
+    @if (type-of($color) == color) {
+      color: $color;
+    }
+  }
+  
+  // 호출
+  p {
+    @include text-style-12(blue);
+  }
+```
+- @content
+```scss
+  // 선언
+  @mixin responsive($screen) {
+    @if ($screen == 'T') {
+      @media screen and (min-width: $md-breakpoint) {
+        @content; // mixin 호출할 때 내용 추가하려면 선언해야 함
+      }
+    }
+  }
+    
+  // 호출
+  @include responsive(T) {
+    max-width: $md-max-container;
+    padding: 0 $md-margin;
+  }
+```
 
 <br>
 
