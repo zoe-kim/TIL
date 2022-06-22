@@ -20,14 +20,14 @@ node_modules (node-sass에 필요한 코드 모음) 폴더가 생성되고, pack
 5. **package.json "scripts" 항목에 `"node-sass" : "node-sass"` 추가하여 명령어 등록**<br>
 `npm run node-sass` 명령어를 실행할 수 있다. (내용이 없어서 에러 뜸. 하지만 좋은 에러.)
 6. **package.json "scripts" 항목에 `"sass" : "node-sass styles/main.scss style.css"` 추가하여 출발 및 목적지 경로 지정**<br>
-`npm run sass` 명령어를 실행할 수 있다. [node-sass](https://www.npmjs.com/package/node-sass) 사이트에서 Command Line Interface 검색해서 Example 내용 복붙 후, 본인 프로젝트 구조에 맞게 수정한다.
+`npm run sass` 명령어를 실행할 수 있다. [node-sass](https://www.npmjs.com/package/node-sass)에서 Command Line Interface 검색해서 Example 복붙 후, 경로 수정한다.
 7. **위 항목에 `-w` 추가하여 `"sass" : "node-sass -w styles/main.scss style.css"` 로 수정**<br>
-[node-sass](https://www.npmjs.com/package/node-sass) options으로, SCSS를 실시간 감시하여 저장 시 자동으로 컴파일한다. (-w, --watch : Watch a directory or file)
+[node-sass](https://www.npmjs.com/package/node-sass) options으로, SCSS를 실시간 감시하여 저장 시 자동으로 컴파일한다.
 8. **위 항목에 `-r` 추가하여 `"sass" : "node-sass -wr styles/main.scss style.css"` 로 수정**<br>
-[node-sass](https://www.npmjs.com/package/node-sass) options으로, SCSS를 재귀적으로 감시하여 하위 디렉토리까지 찾아서 컴파일한다. (-r, --recursive : Recursively watch directories or files)
+[node-sass](https://www.npmjs.com/package/node-sass) options으로, SCSS를 재귀적으로 감시하여 하위 디렉토리까지 찾아서 컴파일한다.
 9. **위 항목에 `--source-map` 추가하여 `"sass" : "node-sass -wr --source-map true styles/main.scss style.css"` 로 수정**<br>
-[node-sass](https://www.npmjs.com/package/node-sass) options으로, 컴파일 이후에도 브라우저에서 SCSS를 참조할 수 있게 정보를 맵핑해준다. (--source-map : Emit source map)<br>
-사용 시 boolean 값이나, .css.map에 대한 목적지를 함께 작성해야 함.
+[node-sass](https://www.npmjs.com/package/node-sass) options으로, 컴파일 이후에도 브라우저에서 SCSS를 참조할 수 있게 정보를 맵핑해준다.<br>
+(boolean 값이나, .css.map에 대한 목적지를 함께 작성해야 함.)
 10. **터미널에 `npm run sass` 입력하면 컴파일 완료!**
 <br>
 
@@ -36,52 +36,52 @@ node_modules (node-sass에 필요한 코드 모음) 폴더가 생성되고, pack
 1. **VSC 확장에서 Live Sass Compiler 검색하여 설치**
 2. **settings.json 파일 수정**<br>
 설정 창에서 우측 상단 '설정 열기(JSON)' 아이콘 클릭
-    ```json
-    "liveSassCompile.settings.formats": [
-      {
-        "format": "expanded",  // .css 스타일 양식 (하단 표 참고)
-        "extensionName": ".css",
-        "savePath": "/css"  // .css 저장 경로 지정
-      }
-    ],
-    "liveSassCompile.settings.generateMap": false  // .map 파일 생성 여부 지정
-    ```
-    <figure>
-      <table>
-          <thead>
-              <tr>
-                  <th style='text-align:center;'>종류</th>
-                  <th style='text-align:center;'>설명</th>
-                  <th style='text-align:center;'>예시</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td style='text-align:center;'>nested</td>
-                  <td style='text-align:center;'>컴파일 기본값, 미지정시 사용</td>
-                  <td>h1{<br>
-  margin: 20px; }</td>
-              </tr>
-              <tr>
-                  <td style='text-align:center;'>expanded</td>
-                  <td style='text-align:center;'>줄바꿈, 계층구조로 처리</td>
-                  <td>h1{<br>
-    margin: 20px;<br>
-  }</td>
-              </tr>
-              <tr>
-                  <td style='text-align:center;'>compact</td>
-                  <td style='text-align:center;'>줄바꿈 없이 한 줄로 적용</td>
-                  <td>h1{margin: 20px;}</td>
-              </tr>
-              <tr>
-                  <td style='text-align:center;'>compressed</td>
-                  <td style='text-align:center;'>불필요한 공백 모두 제거</td>
-                  <td>h1{margin:20px;}h2{color:red;}</td>
-              </tr>
-          </tbody>
-      </table>
-    </figure>
+```json
+"liveSassCompile.settings.formats": [
+  {
+    "format": "expanded",  // .css 스타일 양식 (하단 표 참고)
+    "extensionName": ".css",
+    "savePath": "/css"  // .css 저장 경로 지정
+  }
+],
+"liveSassCompile.settings.generateMap": false  // .map 파일 생성 여부 지정
+```
+<figure>
+  <table>
+      <thead>
+          <tr>
+              <th style='text-align:center;'>종류</th>
+              <th style='text-align:center;'>설명</th>
+              <th style='text-align:center;'>예시</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td style='text-align:center;'>nested</td>
+              <td style='text-align:center;'>컴파일 기본값, 미지정시 사용</td>
+              <td>h1{<br>
+margin: 20px; }</td>
+          </tr>
+          <tr>
+              <td style='text-align:center;'>expanded</td>
+              <td style='text-align:center;'>줄바꿈, 계층구조로 처리</td>
+              <td>h1{<br>
+margin: 20px;<br>
+}</td>
+          </tr>
+          <tr>
+              <td style='text-align:center;'>compact</td>
+              <td style='text-align:center;'>줄바꿈 없이 한 줄로 적용</td>
+              <td>h1{margin: 20px;}</td>
+          </tr>
+          <tr>
+              <td style='text-align:center;'>compressed</td>
+              <td style='text-align:center;'>불필요한 공백 모두 제거</td>
+              <td>h1{margin:20px;}h2{color:red;}</td>
+          </tr>
+      </tbody>
+  </table>
+</figure>
 
 3. **VSC 하단 상태표시줄에 'Watch Sass' 버튼 누르면 컴파일 완료!**
 <br>
