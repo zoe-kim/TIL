@@ -1,5 +1,6 @@
 # TIL
     ✍🏻 Today Zoe Learned
+    그날그날 공부한 내용을 정리하고, Markdown 문법을 연습하기 위한 리드미를 작성했습니다.
 
 <br>
 
