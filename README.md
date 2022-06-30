@@ -42,3 +42,4 @@
 <br>
 
 ## ETC
++ [알아두면 유용한 단축키](./ETC/Shortcut-keys.md)
