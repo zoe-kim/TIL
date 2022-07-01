@@ -29,6 +29,7 @@
 + [@for 반복문](./SCSS/For.md)
 + [@media 쿼리](./SCSS/Media-Query.md)
 + [@mixin](./SCSS/Mixin.md)
++ [%placeholder](./SCSS/Placeholder.md)
 
 
 <br>
