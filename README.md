@@ -18,6 +18,7 @@
 + [Grid System](./CSS/Grid-System.md)
 + [Flex](./CSS/Flex.md)
 + [속성 선택자](./CSS/Attribute-Selector.md)
++ [object-fit](./CSS/object-fit.md)
 
 <br>
 
