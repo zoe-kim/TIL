@@ -32,6 +32,10 @@
 + [@mixin](./SCSS/Mixin.md)
 + [%placeholder](./SCSS/Placeholder.md)
 
+<br>
+
+## jQuery
++ [video 태그 관련 이슈](./jQuery/video.md)
 
 <br>
 
