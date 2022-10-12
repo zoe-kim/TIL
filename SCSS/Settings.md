@@ -35,7 +35,7 @@ node_modules (node-sass에 필요한 코드 모음) 폴더가 생성되고, pack
 
 1. **VSC 확장에서 Live Sass Compiler 검색하여 설치**
 2. **settings.json 파일 수정**<br>
-설정 창에서 우측 상단 '설정 열기(JSON)' 아이콘 클릭
+설정 창에서 우측 상단 '설정 열기(JSON)' 아이콘 클릭, 하단 내용 작성
 ```json
 "liveSassCompile.settings.formats": [
   {
@@ -44,7 +44,7 @@ node_modules (node-sass에 필요한 코드 모음) 폴더가 생성되고, pack
     "savePath": "/css"  // .css 저장 경로 지정
   }
 ],
-"liveSassCompile.settings.generateMap": false  // .map 파일 생성 여부 지정
+"liveSassCompile.settings.generateMap": true  // .map 파일 생성 여부 지정
 ```
 <figure>
   <table>
